@@ -1,0 +1,40 @@
+{
+  "name": "pdf-toolkit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "convert-server": "node server/convert-server.cjs"
+  },
+  "dependencies": {
+    "comlink": "^4.4.2",
+    "cors": "^2.8.6",
+    "express": "^4.22.2",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.10.1",
+    "multer": "^1.4.4",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.0.227",
+    "pinia": "^3.0.4",
+    "sortablejs": "^1.15.7",
+    "vue": "^3.5.34",
+    "vue-router": "^4.6.4",
+    "vuedraggable": "^4.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.1",
+    "@types/node": "^24.12.3",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "@vue/tsconfig": "^0.9.1",
+    "lucide-vue-next": "^0.577.0",
+    "tailwindcss": "^4.3.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.12",
+    "vite-plugin-pwa": "^1.3.0",
+    "vite-plugin-static-copy": "^4.1.1",
+    "vue-tsc": "^3.2.8"
+  }
+}
