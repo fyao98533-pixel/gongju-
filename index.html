@@ -5,12 +5,45 @@
     <link rel="icon" type="image/svg+xml" href="/gongju-/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#6366f1" />
-    <meta name="description" content="免费、离线的文件处理器 — PDF 页面管理、去空白、合并拆分，Word 去空白" />
+    <meta name="description" content="免费、离线的文件处理器" />
     <title>文件处理器</title>
-    <script type="module" crossorigin src="/gongju-/assets/index-Dfa7NYgF.js"></script>
-    <link rel="stylesheet" crossorigin href="/gongju-/assets/index-CPgAVPud.css">
+    <style>
+      #wechat-hint {
+        display: none;
+        position: fixed; inset: 0; z-index: 99999;
+        background: #f5f5f4;
+        font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      #wechat-hint .box { max-width: 320px; margin: 18vh auto 0; text-align: center; padding: 40px 24px; }
+      #wechat-hint .icon { font-size: 56px; margin-bottom: 20px; }
+      #wechat-hint h2 { font-size: 18px; color: #333; margin-bottom: 8px; }
+      #wechat-hint p { font-size: 14px; color: #888; line-height: 1.7; margin-bottom: 16px; }
+      #wechat-hint .step { margin-top: 12px; padding: 12px 16px; background: #fff; border-radius: 12px; box-shadow: 0 1px 8px rgba(0,0,0,0.06); text-align: left; font-size: 14px; color: #555; }
+      #wechat-hint .step span { display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background: #6366f1; color: #fff; font-size: 12px; margin-right: 8px; font-weight: 600; }
+    </style>
+    <script type="module" crossorigin src="/gongju-/assets/index-BynNeEGW.js"></script>
+    <link rel="stylesheet" crossorigin href="/gongju-/assets/index-naqAqOcd.css">
   <link rel="manifest" href="/gongju-/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/gongju-/registerSW.js"></script></head>
-  <body class="bg-slate-950 text-white antialiased">
+  <body>
+    <div id="wechat-hint">
+      <div class="box">
+        <div class="icon">🌐</div>
+        <h2>请在浏览器中打开</h2>
+        <p>微信内置浏览器不支持此工具<br>请按以下步骤操作：</p>
+        <div class="step"><span>1</span> 点击页面右上角 <b>···</b></div>
+        <div class="step"><span>2</span> 选择 <b>在浏览器中打开</b></div>
+      </div>
+    </div>
     <div id="app"></div>
+    <script>
+      (function(){
+        var ua = navigator.userAgent || '';
+        var isWechat = /MicroMessenger/i.test(ua);
+        var supportsWorker = typeof Worker !== 'undefined';
+        if (isWechat || !supportsWorker) {
+          document.getElementById('wechat-hint').style.display = 'block';
+        }
+      })();
+    </script>
   </body>
 </html>
